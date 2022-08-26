@@ -27,6 +27,7 @@ function Article({ description, poster, title, slug, author }) {
           alt='post image'
           // height={198.3}
           // width={345.17}
+          layout='fill'
           className='rounded-md w-full h-full object-contain'
         />
       </div>
