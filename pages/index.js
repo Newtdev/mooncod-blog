@@ -14,7 +14,9 @@ const Blog = ({ post }) => {
   const [text, setText] = useState("");
 
   const filterData = () => {
-    return post?.filter((cur) => cur.title.toLowerCase().includes(text));
+    return post?.filter((cur) =>
+      cur.title.toLowerCase().includes(text.toLowerCase())
+    );
   };
 
   const filteredText = (data) => {
