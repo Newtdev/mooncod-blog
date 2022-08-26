@@ -22,12 +22,11 @@ function Article({ description, poster, title, slug, author }) {
   return (
     <div className=' h-[476.16px] px-4 py-4 rounded hover:shadow-2xl hover:bg-[#080A0C] cursor-pointer'>
       <div className='h-[197.17px] w-full rounded-md'>
-        <Image
+        <img
           src={urlFor(poster.asset._ref).url()}
           alt='post image'
           // height={198.3}
           // width={345.17}
-          layout='fill'
           className='rounded-md w-full h-full object-contain'
         />
       </div>
