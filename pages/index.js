@@ -13,15 +13,15 @@ const postQuery = groq`*[_type =='post']{_id,title,description,poster,slug,autho
 const Blog = ({ post }) => {
   const [text, setText] = useState("");
 
-  const filterData = useCallback(() => {
+  const filterData = () => {
     return post?.filter((cur) => cur.title.toLowerCase().includes(text));
-  }, [post]);
+  };
 
-  const filteredText = useCallback((data) => {
+  const filteredText = (data) => {
     setText(data);
-  }, []);
+  };
   return (
-    <main className="max-w-screen h-screeen bg-[#080A0C] bg-[url('../assets/walletbackgroundgradient.webp')]  bg-contain bg-no-repeat bg-top">
+    <main className="max-w-screen h-screeen bg-[#080A0C] bg-[url('../assets/walletbackgroundgradient.webp')]  bg-cover bg-no-repeat bg-top">
       <section className=' w-full h-full'>
         <HeroSection getText={(data) => filteredText(data)} />
       </section>
