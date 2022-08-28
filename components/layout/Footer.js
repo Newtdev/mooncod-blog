@@ -160,7 +160,7 @@ const Footer = ({ children }) => {
               JOIN OUR COMMUNITY
             </p>
             <div className=''>
-              <p className='w-full mb-4 md:text-lg sm:text-sm text-xs my-4'>
+              <p className='w-full lg:w-[70%] mb-4 md:text-lg sm:text-sm text-xs my-4'>
                 Subscribe to receive updates, access to exclusive deals, and
                 more.
               </p>

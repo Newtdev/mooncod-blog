@@ -1,11 +1,15 @@
 import "../styles/globals.css";
 import Layouts from "../components/layout/Layout";
+// import dat from '../public/'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layouts>
-      <Component {...pageProps} />
-    </Layouts>
+    <>
+      <head>{/* <link rel="" href="/favicon.ico"></link> */}</head>
+      <Layouts>
+        <Component {...pageProps} />
+      </Layouts>
+    </>
   );
 }
 

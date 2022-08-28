@@ -41,6 +41,7 @@ export async function getStaticProps({ preview = false }) {
   const post = await getClient(preview).fetch(postQuery);
   return {
     props: { post },
+    revalidate: 10, // In seconds
   };
 }
 

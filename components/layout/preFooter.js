@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const PreFooter = () => {
   return (
-    <section id='manage' className='h-full lg:h-96 w-100 '>
+    <section className="h-full lg:h-96 w-100 bg[#080A0C] bg-[url('../assets/getWalletBackground.webp')]  bg-cover bg-no-repeat">
       <article className='container h-full mx-auto xl:px-8 flex justify-center items-center flex-wrap'>
         <div className='mr-4 mt-8 sm:mt-0 flex flex-col items-center mb-7 sm:mb-0'>
           <h4 className='text-3xl md:text-5xl mb-2 font-body font-bold text-white text-center'>
