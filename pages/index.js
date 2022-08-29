@@ -3,7 +3,7 @@ import ArticleContainer from "../components/homepage/ArticleContainer";
 import { groq } from "next-sanity";
 import { getClient } from "../lib/sanity.server";
 import axios from "axios";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 
 // import { sanityClient } from "../lib/sanity.server";
 

@@ -1,7 +1,9 @@
-import { Fragment, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import emailjs from "emailjs-com";
 import logo from "../../assets/logomoon.webp";
+import Modal from "../layout/Modal";
 import {
   FacebookOutlined,
   RedditCircleFilled,
@@ -10,31 +12,33 @@ import {
 } from "@ant-design/icons";
 // import { FaTelegram } from "react-icons/fa";
 // import emailjs from "emailjs-com";
-// import Example from "./footer pages/modalSuccess";
+import Example from "../layout/Modal";
 
 // import Telegram from '../../assets/telegram.svg'
 
 const Footer = ({ children }) => {
   const [submit, setSubmit] = useState(false);
+  const inputValue = useRef();
 
   const date = new Date();
   const year = date.getFullYear();
 
-  //   const sendEmail = (e) => {
-  //     e.preventDefault();
-  //     // setLoaderState(true)
-  //     emailjs
-  //       .sendForm(
-  //         "service_cerglzl",
-  //         "template_u1fe6vc",
-  //         e.target,
-  //         "mG0Wc3avis-PiQsdY"
-  //       )
-  //       .then((res) => {
-  //         // setLoaderState(false)
-  //         setSubmit(!submit);
-  //       });
-  //   };
+  const sendEmail = (e) => {
+    inputValue.current = "";
+    e.preventDefault();
+    // setLoaderState(true)
+    emailjs
+      .sendForm(
+        "service_cerglzl",
+        "template_u1fe6vc",
+        e.target,
+        "mG0Wc3avis-PiQsdY"
+      )
+      .then((res) => {
+        // setLoaderState(false)
+        setSubmit(!submit);
+      });
+  };
 
   return (
     <Fragment>
@@ -91,6 +95,9 @@ const Footer = ({ children }) => {
                 </li>
               </ul>
             </div>
+            {/* Options -Multiviews RewriteEngine On RewriteCond % {REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]
+ */}
           </div>
           <div>
             <p className=' md:text-lg font-medium mb-4 '>PRODUCTS</p>
@@ -164,14 +171,20 @@ const Footer = ({ children }) => {
                 Subscribe to receive updates, access to exclusive deals, and
                 more.
               </p>
-              <form action='' className='pr-6 md:pr-0'>
+              <form action='' className='pr-6 md:pr-0' onSubmit={sendEmail}>
                 <input
                   type='text'
                   placeholder='Enter your email address'
                   className='bg-inherit appearance-none border-[#fff]  border-2 py-3 px-3 w-full md:w-72 rounded-full outline-none text-white mb-4'
+                  onChange={(e) => {
+                    inputValue.current = e.target.value;
+                  }}
+                  ref={inputValue}
                 />
                 <br />
-                <button className='bg-gradient-to-tr from-[#008AED] to-[#54F0D1] w-full md:w-72 py-3 rounded-full'>
+                <button
+                  type='submit'
+                  className='bg-gradient-to-tr from-[#008AED] to-[#54F0D1] w-full md:w-72 py-3 rounded-full'>
                   Subscribe
                 </button>
               </form>
@@ -219,12 +232,12 @@ const Footer = ({ children }) => {
               {/* <FaTelegram /> */}
             </a>
 
-            {/* {submit && (
-              <Example
+            {submit && (
+              <Modal
                 paragraph=''
                 header='Thank You For Subscripting to Our Newsletter'
               />
-            )} */}
+            )}
           </div>
         </div>
       </article>
