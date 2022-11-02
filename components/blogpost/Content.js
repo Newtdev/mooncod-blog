@@ -9,14 +9,14 @@ import SimilarArticle from "./SimilarArticle";
 const Content = ({ post, blog }) => {
   const components = {
     block: {
-      h1: ({ children }) => <h1 className='text-3xl py-10'>{children}</h1>,
-      h2: ({ children }) => <h2 className='text-3xl py-10'>{children}</h2>,
-      h3: ({ children }) => <h3 className='text-3xl py-10'>{children}</h3>,
-      h4: ({ children }) => <h4 className='text-3xl py-10'>{children}</h4>,
-      h5: ({ children }) => <h5 className='text-3xl py-10'>{children}</h5>,
-      h6: ({ children }) => <h6 className='text-3xl py-10'>{children}</h6>,
+      h1: ({ children }) => <h1 className='text-3xl py-10 text-white'>{children}</h1>,
+      h2: ({ children }) => <h2 className='text-3xl py-10 text-white'>{children}</h2>,
+      h3: ({ children }) => <h3 className='text-3xl py-10 text-white'>{children}</h3>,
+      h4: ({ children }) => <h4 className='text-3xl py-10 text-white'>{children}</h4>,
+      h5: ({ children }) => <h5 className='text-3xl py-10 text-white'>{children}</h5>,
+      h6: ({ children }) => <h6 className='text-3xl py-10 text-white'>{children}</h6>,
       normal: ({ children }) => (
-        <p className='text-md lg:text-lg leading-10 lg:leading-[47px]'>
+        <p className='text-md lg:text-lg leading-10 lg:leading-[47px] text-white'>
           {children}
         </p>
       ),
@@ -33,7 +33,7 @@ const Content = ({ post, blog }) => {
     return (
       <PortableTextComponentsProvider components={components}>
         <article className='container mx-auto md:px-16 lg:px-4 xl:px-20 mx-auto w-full h-full '>
-          <div className='px-6 lg:w-3/4 mx-auto'>
+          <div className='px-6 lg:w-3/4 mx-auto text-white'>
             <PortableText value={post.Post} />
           </div>
         </article>

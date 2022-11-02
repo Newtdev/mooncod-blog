@@ -15,7 +15,7 @@ const ContentHeader = ({ title, author, poster }) => {
         <Image
           src={urlFor(poster.asset._ref).url()}
           layout='fill'
-          className=' w-full h-full object-contain'
+          className=' w-full h-full object-cover'
           alt='blog images'
         />
       </div>
