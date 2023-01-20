@@ -19,6 +19,9 @@ function Article({ description, poster, title, slug, author }) {
       return data;
     }
   }
+  if (!poster) {
+    return;
+  }
   return (
     <div className=' h-[476.16px] px-4 py-4 rounded hover:shadow-2xl hover:bg-[#080A0C] cursor-pointer'>
       <div className='h-[197.17px] w-full rounded-md'>
